@@ -1,6 +1,6 @@
-body{
-    background-color:dark-green;
-   }
+*{
+background-color: darkgreen;
+}
    h1 {
      font-family: 'Gugi', cursive;
      font-weight: bolder;
@@ -59,3 +59,4 @@ body{
        margin-left: 1%;
        margin-right: 1%;
      } 
+    }
