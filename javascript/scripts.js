@@ -12,7 +12,7 @@ function validate() {
     } 
   }
 
-  else if( document.myForm.month.value == "" || isNaN( document.myForm.month.value ) || 
+   else if( document.myForm.month.value == "" || isNaN( document.myForm.month.value ) || 
   document.myForm.month.value.length != 2 || document.myForm.month.value > 12  || document.myForm.month.value <= 0){
      alert( "Please provide your month of birth! between 1 and 12" );
      document.myForm.month.focus() ;
@@ -24,4 +24,25 @@ function validate() {
      alert( "Please provide a valid date that you were born in!" );
      document.myForm.day.focus() ;
      return false;
+  }
+
+  else if(genders[0].checked==false && genders[1].checked==false ) {
+    alert("You must select male or female");
+    return false;
+}   
+else{
+  return true ;
+}
+
+}
+
+function calculateDayValue(){
+    year = document.getElementById("year").value;
+    CC = parseInt(year.substring(0,2));
+    YY = parseInt(year.substring(2,4));
+    MM = parseInt(document.getElementById("month").value);
+    DD = parseInt(document.getElementById("date").value);
+    d = ( ( (CC/4) -2*CC-1) + ( (5*YY/4) ) + ((26*(MM+1)/10) ) + DD)%7;
+    console.log(d);
+    return (Math.floor(d));
   }
